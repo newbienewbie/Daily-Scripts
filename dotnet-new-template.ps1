@@ -33,5 +33,7 @@ dotnet new $arguments
 
 # add package for code generation
 dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore        # as for 2.2
+dotnet add package Microsoft.EntityFrameworkCore.Design # as for 2.2
 
-dotnet restore
+# dotnet restore 
