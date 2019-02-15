@@ -38,11 +38,13 @@ $dcNamespace= $(Prompt-Parameter "namespace of DbContext" -defaultValue "$rootNa
 $modelClass = "$modelNamespace.$model"
 $controllerClass = "$controllerNamespace.$controllerName"
 $dcClass = "$dcNamespace.$dcName"
-$pageModelNamespace= $(Prompt-Parameter "namespace of PageModel" -defaultValue "$rootNamespace.Pages.$model")
+$defaultModelNamespace="$rootNamespace.Pages.$model"+"PageModels"
+$pageModelNamespace= $(Prompt-Parameter "namespace of PageModel" -defaultValue $defaultModelNamespace )
 
 Write-Host $rootNameSpace
 Write-Host $modelClass
 Write-Host $dcClass
+Write-Host $pageModelNamespace
 
 
 Write-Host "[+]set out dir:"
