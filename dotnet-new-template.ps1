@@ -31,9 +31,10 @@ dotnet new globaljson --sdk-version $latestSdkVersionString
 
 dotnet new $arguments
 
+$wildVersion = $latestSdkVersion['MajorVer'] + "." + $latestSdkVersion['MinorVer'] + "." + '*'
+
 # add package for code generation
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-dotnet add package Microsoft.EntityFrameworkCore        # as for 2.2
-dotnet add package Microsoft.EntityFrameworkCore.Design # as for 2.2
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version $wildVersion
+dotnet add package Microsoft.EntityFrameworkCore.Design --version $wildVersion # as for 2.2
 
 # dotnet restore 
