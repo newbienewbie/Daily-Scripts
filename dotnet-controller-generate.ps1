@@ -1,5 +1,6 @@
 
 param (
+    [Switch]$api = $false ,
     [string]$model = $(Read-Host "Model Name(without namespace)")
 )
 
@@ -42,4 +43,7 @@ Write-Host $modelClass
 Write-Host $controllerClass
 Write-Host $dcClass
 
-dotnet aspnet-codegenerator controller -m $model -dc $dcClass -name $controllerName -namespace $controllerNamespace -outDir Controllers --useDefaultLayout
+# whether to generate a controller with views or an ApiController
+$apiSwitch = if($api) {"-api"} else {""}
+
+dotnet aspnet-codegenerator controller $apiSwitch -m $model -dc $dcClass -name $controllerName -namespace $controllerNamespace -outDir Controllers --useDefaultLayout
