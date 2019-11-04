@@ -56,12 +56,12 @@ if($targetVersion['MajorVer'] -ge 3){
     dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation --version $wildVersion --no-restore 
 
     ## Add support for JwtBearer + OIDC
-    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version $wildVersion --no-restore
-    dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect --version $wildVersion --no-restore
+    dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer --version $wildVersion --no-restore
+    dotnet add package Microsoft.AspNetCore.Authentication.OpenIdConnect --version $wildVersion --no-restore
 
     ## Add support for Identity
-    dotnet add package Microsoft.AspNetCore.Identity.UI --version $wildVersion --no-restore
-    dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version $wildVersion --no-restore
+    dotnet add package Microsoft.AspNetCore.Identity.UI --version $wildVersion --no-restore
+    dotnet add package Microsoft.AspNetCore.Identity.EntityFrameworkCore --version $wildVersion --no-restore
 }
 
 ## restore
